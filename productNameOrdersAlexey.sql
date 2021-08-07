@@ -1,5 +1,5 @@
-SELECT product_name
-FROM netology.orders orders
-LEFT JOIN netology.customers customers
-    ON orders.customer_id = customers.id
-HAVING lower(customers.name) = 'alexey'
+SELECT orders.product_name
+FROM netology.customers customers
+         INNER JOIN netology.orders orders
+                   ON customers.id = orders.customer_id
+WHERE lower(customers.name) = 'alexey'
